@@ -3,14 +3,42 @@
 <head>
   <meta charset="utf-8">
   
-  <title>归档: 2016/10 | Wang Shuai&#39;s blog</title>
+  <title>详解jquery插件中“;(function ( $, window, document, undefined )”的作用 | Wang Shuai&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Wang Shuai's blog">
-<meta property="og:url" content="http://yoursite.com/archives/2016/10/index.html">
+  <meta name="description" content="在写jQuery插件的时候我们经常这样写
+;(function($, window, document, undefined){
+    //插件详细代码
+})(jQuery, window, document);
+
+
+
+代码最前边的分号（;）, 为了防止在多文件压缩的时候，其它文件最后一行没有写分号引起错误。
+(function(){})() 为自执行匿名函数， 它的好处就是可以避免内部变量和外">
+<meta property="og:type" content="article">
+<meta property="og:title" content="详解jquery插件中“;(function ( $, window, document, undefined )”的作用">
+<meta property="og:url" content="http://yoursite.com/2016/11/05/详解jquery插件中“;(function ( $, window, document, undefined )”的作用/index.html">
 <meta property="og:site_name" content="Wang Shuai's blog">
+<meta property="og:description" content="在写jQuery插件的时候我们经常这样写
+;(function($, window, document, undefined){
+    //插件详细代码
+})(jQuery, window, document);
+
+
+
+代码最前边的分号（;）, 为了防止在多文件压缩的时候，其它文件最后一行没有写分号引起错误。
+(function(){})() 为自执行匿名函数， 它的好处就是可以避免内部变量和外">
+<meta property="og:updated_time" content="2016-11-05T12:35:17.007Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Wang Shuai's blog">
+<meta name="twitter:title" content="详解jquery插件中“;(function ( $, window, document, undefined )”的作用">
+<meta name="twitter:description" content="在写jQuery插件的时候我们经常这样写
+;(function($, window, document, undefined){
+    //插件详细代码
+})(jQuery, window, document);
+
+
+
+代码最前边的分号（;）, 为了防止在多文件压缩的时候，其它文件最后一行没有写分号引起错误。
+(function(){})() 为自执行匿名函数， 它的好处就是可以避免内部变量和外">
   
     <link rel="alternate" href="/atom.xml" title="Wang Shuai&#39;s blog" type="application/atom+xml">
   
@@ -59,96 +87,65 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/10/30/react-es6-webpack/" class="archive-article-date">
-  <time datetime="2016-10-30T13:45:24.000Z" itemprop="datePublished">10月 30</time>
+        <section id="main"><article id="active-详解jquery插件中“;(function ( $, window, document, undefined )”的作用" class="article article-type-active" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/11/05/详解jquery插件中“;(function ( $, window, document, undefined )”的作用/" class="article-date">
+  <time datetime="2016-11-05T10:18:37.000Z" itemprop="datePublished">2016-11-05</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/10/30/react-es6-webpack/">react-es6-webpack</a>
+    <h1 class="article-title" itemprop="name">
+      详解jquery插件中“;(function ( $, window, document, undefined )”的作用
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/10/02/测试/" class="archive-article-date">
-  <time datetime="2016-10-02T09:59:13.000Z" itemprop="datePublished">10月 2</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/10/02/测试/">测试</a>
-    </h1>
-  
+        <p>在写jQuery插件的时候我们经常这样写</p>
+<pre><code>;(function($, window, document, undefined){
+    //插件详细代码
+})(jQuery, window, document);
+</code></pre>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/10/02/test/" class="archive-article-date">
-  <time datetime="2016-10-02T09:59:13.000Z" itemprop="datePublished">10月 2</time>
-</a>
+<ol>
+<li>代码最前边的分号（;）, 为了防止在多文件压缩的时候，其它文件最后一行没有写分号引起错误。</li>
+<li>(function(){})() 为自执行匿名函数， 它的好处就是可以避免内部变量和外部变量引起冲突。</li>
+<li>window, document对象都是全局环境下的， 在函数中window, document则是局部变量，不是全局的window, document对象。这样的好处就是可以提交性能， 减少作用域链的查询时间， 如果函数体内多次调用window和document对象，那么这样做非常有必要。</li>
+<li>undefined是低版本浏览器可以修改的问题。</li>
+</ol>
+
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/10/02/test/">test</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/10/01/hello-world/" class="archive-article-date">
-  <time datetime="2016-10-01T10:33:30.357Z" itemprop="datePublished">10月 1</time>
-</a>
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/11/05/详解jquery插件中“;(function ( $, window, document, undefined )”的作用/" data-id="civ52aya90001qslio79czuzv" class="article-share-link">Share</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/10/01/hello-world/">Hello World</a>
-    </h1>
-  
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/function-window-document-undefined/">;(function ( $, window, document, undefined )</a></li></ul>
 
-    </header>
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/10/30/react-es6-webpack/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">react-es6-webpack</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
 
 </section>
         
