@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>国画</title>
+	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="./css/index.css">
+</head>
+<body>
+	<div class="banner hidden-sm hidden-xs">
+		<img src="./images/banner.jpg" />
+	</div>
+	<div class="container">
+		<div class="row image-list">
+			<!-- <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 image-list-item">
+				<p>
+					<a href="#">
+						<img src="./images/image1.jpg" />
+					</a>
+				</p>
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 image-list-item">
+				<p>
+					<a href="#">
+						<img src="./images/image4.jpg" />
+					</a>
+				</p>
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 image-list-item">
+				<p>
+					<a href="#">
+						<img src="./images/image1.jpg" />
+					</a>
+				</p>
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 image-list-item">
+				<p>
+					<a href="#">
+						<img src="./images/image4.jpg" />
+					</a>
+				</p>
+			</div> -->
+		</div>
+	</div>
+	<div class="mt20 hidden-sm hidden-xs"></div>
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					<p>业务部：13611194152 1627478361 </p>
+					<p class="hidden-md hidden-lg">电子邮件：1627478361@126.com</p>
+					<p>服务QQ：1291231237 <span class="hidden-sm hidden-xs">&nbsp;&nbsp; 电子邮件：1627478361@126.com</span></p>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script type="text/javascript" src="./js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		$(function () {
+			$.getJSON('./js/images.json', function (data) {
+				console.log(data)
+				var oneHalf = 0
+				var divStart = '<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 image-list-item">'
+				var divHtml = ''
+				oneHalf = Math.floor(data.length / 2)
+				for (var i=0, ilen=data.length; i<ilen; i++) {
+					divHtml += '<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 image-list-item">'
+					for (var j=0, jlen=data[i].length; j<jlen; j++) {
+						divHtml +=
+							'<p>'+
+								'<a href="#">'+
+									'<img src="'+ data[i][j].url +'" />'+
+								'</a>'+
+							'</p>'
+					}
+					divHtml += '</div>'
+				}
+				console.log(divHtml)
+				$('.image-list').html(divHtml)
+			})	
+		})
+	</script>
+</body>
+</html>

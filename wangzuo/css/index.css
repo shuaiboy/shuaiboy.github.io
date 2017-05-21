@@ -1,0 +1,49 @@
+body{
+	background: #F2F2F2;
+}
+.mt20{
+	margin-top: 20px;
+}
+.container{
+	overflow: hidden;
+}
+.no-padding{
+	padding: 0 !important;
+}
+.banner{
+	width: 100%;
+}
+.banner img{
+	width: 100%;
+}
+.image-list{
+	padding-top: 10px;
+}
+.image-list-item{
+	padding-right: 5px !important;
+	padding-left: 5px !important;
+}
+.image-list-item p{
+	width: 100%;
+	padding: 10px;
+	box-sizing: border-box;
+	background: #fff;
+	border-radius: 5px;
+}
+.image-list img{
+	width: 100%;
+}
+footer{
+	text-align: center;
+	padding: 10px 0;
+	background: #202020;
+	border-top: 1px solid #ccc;
+	color: #fff;
+	font-family: '微软雅黑, 宋体'
+}
+footer a{
+	color: #fff;
+}
+footer a:hover{
+	color: #fff;
+}
